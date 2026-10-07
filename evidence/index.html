@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Application review evidence · HV2T Discord Bots</title>
+  <style>body{margin:0;background:#f3f5f9;color:#24334b;font:16px/1.7 system-ui,sans-serif}main{max-width:920px;margin:auto;padding:34px 22px}h1{line-height:1.2}h2{font-size:24px}a{color:#314b86;overflow-wrap:anywhere}section{padding:26px;margin:24px 0;background:white;border:1px solid #dce3ec;border-radius:12px}img{max-width:100%;height:auto;border-radius:6px;background:#303239}figure{margin:20px 0}figcaption,.note{color:#59677b;font-size:14px}code{overflow-wrap:anywhere}li{margin:8px 0}.compact{max-width:625px}nav{display:flex;gap:22px;flex-wrap:wrap}@media(max-width:560px){main{padding:24px 15px}section{padding:19px}}</style>
+</head>
+<body><main>
+  <p><a href="../">Privacy Policy</a></p>
+  <h1>Application review evidence</h1>
+  <p>Existing behavior of the three replacement Discord applications. Captured on 8 October 2026. These screenshots are supporting evidence, not an assertion that Discord has approved an intent request.</p>
+  <nav aria-label="Evidence by application"><a href="#ram">Ram</a><a href="#emilia">Emilia</a><a href="#beatrice">Beatrice</a></nav>
+  <p class="note">For privacy, screenshots omit member identities, private channel names, inventory entries and unrelated messages. The Emilia and Beatrice captures temporarily hid those portions in the browser and isolated the original bot message for capture. Text retained in each image is unchanged. The temporary display changes were then removed; no server messages were edited.</p>
+  <section id="ram">
+    <h2>HV2T Ram</h2>
+    <p>Application ID: <code>1556767954857754705</code>.</p>
+    <h3>Message Content: ordinary-message word-chain gameplay</h3>
+    <p>This is an existing response from the new Ram application in the English word-chain channel. It rejects a player attempting consecutive turns. The game receives ordinary message entries and applies its current-player and word-chain rules; this is not a slash-command demonstration.</p>
+    <figure><img src="ram-word-chain.png" alt="HV2T Ram responds: You cannot chain your own word!"><figcaption>Original bot response, 6 October 2026 at 18:47 UTC+7. The reply recipient and surrounding conversation were cropped out.</figcaption></figure>
+    <p><a href="https://discord.com/channels/1194106864582004849/1243825258427973683/1556996303227985975">Original Discord message</a> (requires access to the server).</p>
+    <h3>Guild Members: implementation context</h3>
+    <p>Ram also uses member-update events and scheduled membership/role checks for Booster eligibility, weekly winner roles, moderator-role rewards and membership-filtered rankings. Slash commands coexist with these background operations. The screenshot above does not demonstrate a Booster role change or reward; those member-event functions are described separately in the application request.</p>
+    <p class="note">No role was assigned, reward issued or gameplay transaction manufactured to obtain this screenshot.</p>
+  </section>
+  <section id="emilia">
+    <h2>HV2T Emilia</h2>
+    <p>Application ID: <code>1556770366666575912</code>.</p>
+    <h3>Message Content: image/video-deletion moderation</h3>
+    <p>The current Emilia application produced this moderation notice after processing a message containing image/video media that was deleted. The retained Vietnamese text means “deleted a message containing an image/video in [channel]”. The affected member and channel identifiers are hidden.</p>
+    <figure><img src="emilia-media-moderation.png" alt="HV2T Emilia's redacted notification that an image/video message was deleted"><figcaption>Existing new-bot output, 8 October 2026 at 00:15 UTC+7. User and channel mentions were hidden for this public review copy.</figcaption></figure>
+    <p><a href="https://discord.com/channels/1194106864582004849/1340657013683650651/1557441335735230546">Original Discord message</a> (requires access to the server).</p>
+    <h3>Guild Members: implementation context</h3>
+    <p>Emilia uses member-join events to reapply an existing, still-active jail case when its subject leaves and rejoins. It checks the stored case and applies configured roles. The media-deletion screenshot is not presented as a demonstration of that separate rejoin event.</p>
+    <p class="note">No ordinary member was jailed, released or asked to leave/rejoin to stage evidence.</p>
+  </section>
+  <section id="beatrice">
+    <h2>HV2T Beatrice</h2>
+    <p>Application ID: <code>1556771478127779900</code>.</p>
+    <h3>Message Content: existing prefix-command response</h3>
+    <p>A user sent the ordinary message <code>.bag</code>; the new Beatrice application replied with its inventory interface. The command text, bot identity and section labels remain visible below. The player's identity, avatar, holdings and item quantities are hidden.</p>
+    <figure class="compact"><img src="beatrice-prefix-inventory.png" alt="The .bag command followed by HV2T Beatrice's inventory response; personal inventory data hidden"><figcaption>Existing new-bot response, 7 October 2026 at 23:37 UTC+7. Empty areas are the intentionally hidden player data.</figcaption></figure>
+    <p><a href="https://discord.com/channels/1194106864582004849/1340657013683650651/1557431793538433157">Original Discord response</a> (requires access to the server).</p>
+    <p>Beatrice also has an administrator-run quiz that checks free-form message replies and durably awards the first correct respondent. No current quiz example was found within the bounded recent-message inspection, so this inventory capture is not represented as quiz evidence. Slash commands exist for the standard economy commands; the request describes the preserved prefix/reply workflows honestly.</p>
+    <p>Guild Members is not requested for Beatrice because its optional daily Booster-reward feature is disabled. Presence is not requested by any of the three bots.</p>
+  </section>
+  <p class="note">Privacy and data requests: <a href="../#contact">contact details and process</a>.</p>
+</main></body></html>
