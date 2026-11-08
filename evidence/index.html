@@ -9,7 +9,7 @@
 <body><main>
   <p><a href="../">Privacy Policy</a></p>
   <h1>Application review evidence</h1>
-  <p>Existing behavior of the three replacement Discord applications. Captured on 8 October 2026. These screenshots are supporting evidence, not an assertion that Discord has approved an intent request.</p>
+  <p>Application review context updated on 9 November 2026. Screenshots were captured on 8 October 2026 and are explicitly marked below where the demonstrated feature has since been retired. A screenshot is supporting evidence, not an assertion that Discord has approved an intent request.</p>
   <nav aria-label="Evidence by application"><a href="#ram">Ram</a><a href="#emilia">Emilia</a><a href="#beatrice">Beatrice</a></nav>
   <p class="note">For privacy, screenshots omit member identities, private channel names, inventory entries and unrelated messages. The Emilia and Beatrice captures temporarily hid those portions in the browser and isolated the original bot message for capture. Text retained in each image is unchanged. The temporary display changes were then removed; no server messages were edited.</p>
   <section id="ram">
@@ -26,22 +26,22 @@
   <section id="emilia">
     <h2>HV2T Emilia</h2>
     <p>Application ID: <code>1556770366666575912</code>.</p>
-    <h3>Message Content: image/video-deletion moderation</h3>
-    <p>The current Emilia application produced this moderation notice after processing a message containing image/video media that was deleted. The retained Vietnamese text means “deleted a message containing an image/video in [channel]”. The affected member and channel identifiers are hidden.</p>
+    <h3>Historical only: retired image/video-deletion moderation</h3>
+    <p>The media-deletion workflow shown below is retired and is not a reason for the current Guild Members-only request. This historical notice was produced after a message containing image/video media was deleted. The retained Vietnamese text means “deleted a message containing an image/video in [channel]”. The affected member and channel identifiers are hidden.</p>
     <figure><img src="emilia-media-moderation.png" alt="HV2T Emilia's redacted notification that an image/video message was deleted"><figcaption>Existing new-bot output, 8 October 2026 at 00:15 UTC+7. User and channel mentions were hidden for this public review copy.</figcaption></figure>
     <p><a href="https://discord.com/channels/1194106864582004849/1340657013683650651/1557441335735230546">Original Discord message</a> (requires access to the server).</p>
     <h3>Guild Members: implementation context</h3>
-    <p>Emilia uses member-join events to reapply an existing, still-active jail case when its subject leaves and rejoins. It checks the stored case and applies configured roles. The media-deletion screenshot is not presented as a demonstration of that separate rejoin event.</p>
+    <p>Emilia uses member-join events to reapply an existing, still-active jail case when its subject leaves and rejoins. It checks the stored case, guild and expiry before applying the configured remaining restriction. Moderator input uses slash commands; ordinary member lookups alone are not the justification for Guild Members. Message Content and Presence are not requested. The historical media-deletion screenshot is not a demonstration of rejoin enforcement; no new rejoin recording is claimed on this page.</p>
     <p class="note">No ordinary member was jailed, released or asked to leave/rejoin to stage evidence.</p>
   </section>
   <section id="beatrice">
     <h2>HV2T Beatrice</h2>
     <p>Application ID: <code>1556771478127779900</code>.</p>
-    <h3>Message Content: existing prefix-command response</h3>
-    <p>A user sent the ordinary message <code>.bag</code>; the new Beatrice application replied with its inventory interface. The command text, bot identity and section labels remain visible below. The player's identity, avatar, holdings and item quantities are hidden.</p>
+    <h3>Historical only: retired prefix-command response</h3>
+    <p>This capture predates the retirement of Beatrice's prefix router and quiz on 18 October 2026. A user sent <code>.bag</code> and the bot replied with its inventory interface. Current economy commands use slash commands and interactive controls. The player's identity, avatar, holdings and item quantities are hidden in the historical capture.</p>
     <figure class="compact"><img src="beatrice-prefix-inventory.png" alt="The .bag command followed by HV2T Beatrice's inventory response; personal inventory data hidden"><figcaption>Existing new-bot response, 7 October 2026 at 23:37 UTC+7. Empty areas are the intentionally hidden player data.</figcaption></figure>
     <p><a href="https://discord.com/channels/1194106864582004849/1340657013683650651/1557431793538433157">Original Discord response</a> (requires access to the server).</p>
-    <p>Beatrice also has an administrator-run quiz that checks free-form message replies and durably awards the first correct respondent. No current quiz example was found within the bounded recent-message inspection, so this inventory capture is not represented as quiz evidence. Slash commands exist for the standard economy commands; the request describes the preserved prefix/reply workflows honestly.</p>
+    <p>Beatrice no longer operates the administrator quiz or text-prefix commands and does not request Message Content. This image is retained as historical context, not evidence for a current privileged-intent request.</p>
     <p>Guild Members is not requested for Beatrice because its optional daily Booster-reward feature is disabled. Presence is not requested by any of the three bots.</p>
   </section>
   <p class="note">Privacy and data requests: <a href="../#contact">contact details and process</a>.</p>

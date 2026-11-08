@@ -40,7 +40,7 @@
     <header>
       <h1>Privacy Policy</h1>
       <p class="intro">How Ram, Emilia and Beatrice use Discord data to provide their community game, economy and moderation features.</p>
-      <p class="date">Effective and last updated: <time datetime="2026-10-08">8 October 2026</time></p>
+      <p class="date">Effective and last updated: <time datetime="2026-11-09">9 November 2026</time></p>
     </header>
     <div class="apps" aria-label="Applications covered by this policy">
       <div class="app"><strong>HV2T Ram</strong><span>1556767954857754705</span></div>
@@ -65,9 +65,9 @@
         <p>For liked-post rankings, Ram stores a post excerpt of up to 1,000 JavaScript string units, together with its message and channel identifiers, author relationship and Like count. This feature operates in channels visible to the bot within the configured server. Stored excerpts are not automatically synchronized with later edits to the original post.</p>
         <h3>Emilia: moderation</h3>
         <p>Emilia processes member and role information for moderator-authorized jail cases, role removal and restoration, reapplying active restrictions when a member rejoins, and recovery after interrupted operations. Cases can include participant identifiers, usernames or display names, avatar URLs, reasons, guild and channel identifiers, affected roles, timestamps and related reward or penalty status.</p>
-        <p>Its media-deletion workflow examines image or video attachment metadata and recent audit-log events. Thread starter content and attachment metadata can also be cached in process memory for the thread-handling workflow. Emilia does not provide a general-purpose archive of all server conversations.</p>
-        <h3>Beatrice: economy and quizzes</h3>
-        <p>Beatrice processes user and channel identifiers and economy records for Gold, inventory, chat-activity rewards, bets and quizzes. Its chat-Gold handler does not store ordinary chat text. Quiz state includes the question, normalized answer, creator and participant identifiers, message and channel identifiers, timestamps and winner or reward status. Betting state includes questions, options, participants, stakes and settlement status.</p>
+        <p>Moderator input uses slash commands. Automatic detection and punishment for deleted image/video messages and text-prefix moderation commands are retired. The remaining restricted-channel and thread-deletion rules use channel, member, thread-owner and audit-event metadata. Thread state caches owner identifiers, not starter text or attachment references. Emilia requests Guild Members for active-jail rejoin enforcement; it does not request Message Content or Presence. Existing moderation records remain subject to the retention and deletion process below.</p>
+        <h3>Beatrice: economy</h3>
+        <p>Beatrice processes user and channel identifiers and economy records for Gold, inventory, chat-activity rewards and bets through slash commands and interactive controls. Its chat-Gold handler uses message metadata and does not store ordinary chat text. The administrator quiz and prefix-command router are retired. Historical quiz state is retained outside the runtime for rollback/audit and is not loaded or processed by the current bot. Betting state includes questions, options, participants, stakes and settlement status.</p>
         <p>Beatrice does not perform mass messaging. Its optional daily Booster-reward feature is currently disabled.</p>
       </section>
       <section id="ai">
@@ -85,7 +85,7 @@
           <li><strong>Liked posts:</strong> Ram has no automatic age-based expiry. Records can be removed when the bot observes the last Like being removed, the post being deleted, or its channel or thread being deleted.</li>
           <li><strong>Word-chain entries:</strong> entries are cleared when a game resets rather than after a fixed number of days.</li>
           <li><strong>Moderation:</strong> Emilia retains open cases and up to 2,000 closed cases by count. Its thread cache is held in memory, is cleared by process restart and has no fixed time-based expiry.</li>
-          <li><strong>Quizzes and bets:</strong> completed Beatrice quizzes are removed after reward confirmation and successful announcement. Unresolved quizzes and recovery records persist. Bets remain until settlement or cancellation.</li>
+          <li><strong>Historical quizzes and current bets:</strong> Beatrice no longer creates or processes quizzes. Historical quiz state and backups are handled through the manual data-request process; no new blanket automatic expiry is claimed. Bets remain until settlement or cancellation.</li>
           <li><strong>Backups:</strong> copies can contain earlier records; there is no blanket automatic 30-day deletion schedule.</li>
         </ul>
         <p>Data requests are handled manually as described below. Records that are no longer necessary, or whose deletion is required, must be addressed through that process. Transaction receipts require care so that deleting identifying data does not cause a completed reward or payment to be applied again.</p>
